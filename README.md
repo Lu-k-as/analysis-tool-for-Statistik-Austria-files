@@ -1,24 +1,12 @@
-This Programm has the function to autimatical 
-- read some Statistic Austria file
-- detect all column-names
-- ask user for which columns / time-frame / future forcast he is interested in
-- generating output file
+# Statistik Austria Document Analysis Tool
 
----Beschreibung---
+## Beschreibung
+Dieses Programm wertet automatisiert Dateien von Statistik Austria aus. Dabei können bei der Auswertung folgende Einstellung getroffen werden:
+- Auswahl der Einträge/Spalten, welche analysiert werden sollen.
+-	Erstellung einer linearen Vorhersage, mit variabler Vorhersagedauer.
+-	Auswertedaten im absolut/relativ Angaben.
 
---> main.cpp
-Hierbei handelt es sich um das Hauptprogramm, dass so aufgebaut wurde dass am Schluss 
-eine Art State-Maschine welche immer wieder durchlaufen wird bis eine Benutzereingabe <Q>
-für Quit ist. In dieser State-Maschine werden immer Funktionen aufgerufen welche oberhalbt
-deffeniert sind.
-
--->database.h und database.cpp
-Hier handelt es sich um die Datenkapselung des gesammten Projektes. Zuerst wird hier eine
-Klasse angelegt welche dynamisch erweitert werden kann. Danach folgen diverse Zugriffsfunktionen.
-Es wird hier kurz gesagt eine Art Datenbank erstellt mit notwendigen Zugriffsfunktionen.
-
--->importdata.h und importdata.cpp
-Hier geht es vor allem um die BEnutzereingabe. Es wird hier großen Wert darauf gelegt, dass
-bei fehlerhaften Benutzereingaben ensprechnende Fehlermeldungen und ensprechende Fehlerkorrekturen
-zu geben um das Programm vor unzulässigen Eingabedaten oder im schlimmsten Fall einem Programmabsturtz
-zu schlützen.
+## Dateien
+- main.cpp:  Hauptprogramm, welche eine State-Maschine zyklisch durchläuf, bis die Benutzereingabe „Quit“ getätigt wird.
+- database.cpp:  Hier handelt es sich um die Datenkapselung und Zwischenspeicherung des gesamten Projektes. Kurz gesagt handelt es sich um eine grundlegende Datenbank mit notwendigen Zugriffsfunktionen.
+- importdata.cpp:  Dieser Projektteil stellt eine korrekte Verarbeitung der Input-Daten sicher. Falls eine fehlerhafte Benutzereingabe oder fehlerhafte Dateien eingelesen werden, wird eine entsprechende Fehlermeldungen ausgegeben.
